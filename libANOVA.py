@@ -18,7 +18,7 @@
 
 def list_product(l):
     """Returns the product of all the numbers in a list"""
-    return reduce(lambda x, y: x * y, l)
+    return reduce(lambda x, y: x * y, l) 
 
 def sqrt(n):
     """Returns the square root of n"""
@@ -26,7 +26,7 @@ def sqrt(n):
     
 def nthroot(n, root):
     """Returns the <root>th root of n"""
-    return n ** (1/root)
+    return n ** (1/root)  # Hopefully this works
     
 def range(l):
     """Returns the range of a list"""
@@ -41,8 +41,8 @@ def even(n):
         
 def median(l):
     """Returns the median of a list"""
-    if even(len(l)):
-    else:
+    if even(len(l)):    # NOT YET IMPLEMENTED
+    else:               # NOTHING HAPPENS
     
 #==============================================================================
 
