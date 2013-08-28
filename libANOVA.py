@@ -16,17 +16,21 @@
 #==============================================================================
 # One-liners: basic mathematical functions
 
+def list_product(l):
+    """Returns the product of all the numbers in a list"""
+    return reduce(lambda x, y: x * y, l)
+
 def sqrt(n):
     """Returns the square root of n"""
     return n ** 0.5
     
+def nthroot(n, root):
+    """Returns the <root>th root of n"""
+    return n ** (1/root)
+    
 def range(l):
     """Returns the range of a list"""
     return l[len(l)] - l[0]
-
-def mean(l):
-    """Returns the arithmetic mean of list l, as a float"""
-    return sum(l) / len(l)
     
 def even(n):
     """Returns true if n is even"""
@@ -44,6 +48,14 @@ def median(l):
 
 #==============================================================================
 # Sigma and anova functions
+
+def arith_mean(l):
+    """Returns the arithmetic mean of list l, as a float"""
+    return sum(l) / len(l)
+
+def geo_mean(l):
+    """Returns the geometric mean of list l, as a float"""
+    return nthroot(list_product(l), len(l))
 
 def variance(l, a):
     """Returns the variance of list l from average a, as a float"""
