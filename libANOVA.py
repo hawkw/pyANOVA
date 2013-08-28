@@ -64,8 +64,8 @@ def variance(l, a):
         variance += (a - i) ** 2
     return variance / len(l)
     
-def sigma(variance):
+def sigma(l):
     """Given the variance, returns the standard deviation"""
-    return sqrt(variance)
+    return sqrt(variance(l))
 
 #==============================================================================
