@@ -13,7 +13,9 @@
 
 # pyANOVA philosophy: if it can be done in one line, do it in one line
 
-#==============================================================================
+from __future__ import division # YAY WE'RE IN THE FUTURE
+
+#=============================================================================
 # One-liners: basic mathematical functions
 
 def list_product(l):
@@ -24,7 +26,7 @@ def sqrt(n):
     """Returns the square root of n"""
     return n ** 0.5
     
-def nthroot(n, root):
+def nth_root(n, root):
     """Returns the <root>th root of n"""
     return n ** (1/root)  # Hopefully this works
     
@@ -38,15 +40,15 @@ def even(n):
         return True
     else:
         return False
-        
-def median(l):
-    """Returns the median of a list"""
-    if even(len(l)):    # NOT YET IMPLEMENTED
-    else:               # NOTHING HAPPENS
-    
-#==============================================================================
+       
+#def median(l):
+#    """Returns the median of a list"""
+#    if even(len(l)):    # NOT YET IMPLEMENTED
+#    else:               # NOTHING HAPPENS
 
-#==============================================================================
+#=============================================================================
+
+#=============================================================================
 # Sigma and anova functions
 
 def arith_mean(l):
@@ -55,17 +57,18 @@ def arith_mean(l):
 
 def geo_mean(l):
     """Returns the geometric mean of list l, as a float"""
-    return nthroot(list_product(l), len(l))
+    return nth_root(list_product(l), len(l))
 
-def variance(l, a):
+def variance(l):
     """Returns the variance of list l from average a, as a float"""
+    a = arith_mean(l)
     variance = 0      # accumulator for the rolling sum of squared differences
-    for i in l:
-        variance += (a - i) ** 2
+    for n in l:
+        variance += (a - l) ** 2
     return variance / len(l)
-    
+
 def sigma(l):
     """Given the variance, returns the standard deviation"""
     return sqrt(variance(l))
-
-#==============================================================================
+    
+#=============================================================================
