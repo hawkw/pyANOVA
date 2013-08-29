@@ -19,9 +19,13 @@ from __future__ import division # YAY WE'RE IN THE FUTURE
 # One-liners: basic mathematical functions
 
 def list_product(l):
-    """Returns the product of all the numbers in a list"""
+    """Returns the product of all the numbers in list l"""
     return reduce(lambda x, y: x * y, l) 
-
+    
+def list_sum(l):
+    """Returns the sum of all the numbers in list l"""
+    return reduce(lambda x, y: x + y, l)
+    
 def sqrt(n):
     """Returns the square root of n"""
     return n ** 0.5
@@ -41,11 +45,18 @@ def even(n):
     else:
         return False
        
-#def median(l):
-#    """Returns the median of a list"""
-#    if even(len(l)):    # NOT YET IMPLEMENTED
-#    else:               # NOTHING HAPPENS
-
+def median(l):
+    """Returns the median of a list"""
+    if even(len(l)):
+        while(len(l) > 2):
+            l.pop()
+            l.pop(len(l))
+        return reduce(l)
+    else: 
+        while(len(l) > 1):
+            l.pop()
+            l.pop(len(l))
+        return l[0]
 #=============================================================================
 
 #=============================================================================
@@ -53,7 +64,7 @@ def even(n):
 
 def arith_mean(l):
     """Returns the arithmetic mean of list l, as a float"""
-    return sum(l) / len(l)
+    return list_sum(l) / len(l)
 
 def geo_mean(l):
     """Returns the geometric mean of list l, as a float"""
@@ -69,6 +80,6 @@ def variance(l):
 
 def sigma(l):
     """Given the variance, returns the standard deviation"""
-    return sqrt(variance(l))
+    return nth_root(variance(l), 2)
     
 #=============================================================================
