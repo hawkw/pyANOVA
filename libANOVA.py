@@ -33,13 +33,14 @@ def sqrt(n):
 def nth_root(n, root):
     """Returns the <root>th root of n"""
     return n ** (1/root)  # Hopefully this works
+                          # NOTE: It appears to.
     
 def range(l):
     """Returns the range of a list"""
     return l[len(l)] - l[0]
     
 def even(n):
-    """Returns true if n is even"""
+    """Returns true if n is even, false if otherwise."""
     if n % 2 == 0:
         return True
     else:
@@ -47,16 +48,11 @@ def even(n):
        
 def median(l):
     """Returns the median of a list"""
-    if even(len(l)):
-        while(len(l) > 2):
-            l.pop()
-            l.pop(len(l))
-        return reduce(l)
-    else: 
-        while(len(l) > 1):
-            l.pop()
-            l.pop(len(l))
-        return l[0]
+    l.sort()
+    if not even(len(l)):
+        return l[len(l)//2]
+    else:
+        return (l[len(l)//2] + l[len(l)//2+1])/2
 #=============================================================================
 
 #=============================================================================
