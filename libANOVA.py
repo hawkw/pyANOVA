@@ -11,7 +11,9 @@
 #   + a: an average
 #   + n: a number
 
-# pyANOVA philosophy: if it can be done in one line, do it in one line
+# pyANOVA philosophy: 
+#   + if it can be done in one line, do it in one line
+#   + functional, when possible
 
 #=============================================================================
 # One-liners: basic mathematical functions
