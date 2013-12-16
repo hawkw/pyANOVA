@@ -13,8 +13,6 @@
 
 # pyANOVA philosophy: if it can be done in one line, do it in one line
 
-from __future__ import division # YAY WE'RE IN THE FUTURE
-
 #=============================================================================
 # One-liners: basic mathematical functions
 
