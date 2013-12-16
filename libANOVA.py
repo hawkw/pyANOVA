@@ -41,11 +41,9 @@ def range(l):
     
 def even(n):
     """Returns true if n is even, false if otherwise."""
-    if n % 2 == 0:
-        return True
-    else:
-        return False
-       
+    return n % 2 == 0   # apparently bool inheirits from int
+                        # (makes this have the one-liner nature)
+        
 def median(l):
     """Returns the median of a list"""
     l.sort()
