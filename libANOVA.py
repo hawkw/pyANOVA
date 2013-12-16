@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3.3
 
 # libANOVA.py
 # by Hawk Weisman - 2013
