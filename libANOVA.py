@@ -66,11 +66,12 @@ def geo_mean(l):
 
 def variance(l):
     """Returns the variance of list l from average a, as a float"""
-    a = arith_mean(l)
-    variance = 0      # accumulator for the rolling sum of squared differences
-    for n in l:
-        variance += (a - l) ** 2
-    return variance / len(l)
+    return reduce(lambda, v, x: v += (x - arith_mean(l))**2, l)/len(l)
+    
+    #variance = 0      # accumulator for the rolling sum of squared differences
+    #for n in l:
+    #    variance += (a - l) ** 2
+    #return variance / len(l)
 
 def sigma(l):
     """Given the variance, returns the standard deviation"""
